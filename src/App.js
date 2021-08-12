@@ -7,20 +7,20 @@ function App() {
     {
       note: "Find a job",
       isFinished: false,
-      id: 0
+      id: 1
     }, 
     {
       note: "Stop being dead poor",
       isFinished: false,
-      id: 1
+      id: 2
     }]
   )
-  const [index, setIndex] = react.useState(2);
+  const [automaticId, setAutomaticId] = react.useState(3);
   const handleSubmit = e => {
     e.preventDefault();
     let newNote = e.target.firstChild.value;
-    setIndex(index => index +=1)
-    setNotes([...notes, {id: index, isFinished: false, note: newNote}])
+    setNotes([...notes, {id: automaticId, isFinished: false, note: newNote}])
+    setAutomaticId(index => index +=1)
     e.target.firstChild.value= "";
   }
   return (
